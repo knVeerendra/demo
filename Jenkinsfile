@@ -9,7 +9,7 @@ pipeline {
 
         stage('CHECKOUT') {
             steps {
-                git 'https://github.com/knVeerendra/Demo.git'
+                git branch: 'main', url: 'https://github.com/knVeerendra/Demo.git'
             }
         }
 
@@ -27,15 +27,6 @@ pipeline {
                     bat 'mvn test'
                 }
             }
-        }
-    }
-
-    post {
-        success {
-            echo 'Build Successful'
-        }
-        failure {
-            echo 'Build Failed'
         }
     }
 }
