@@ -13,7 +13,7 @@ pipeline {
             }
         }
 
-        stage('BUILD') {
+        stage('Build') {
             steps {
                 dir('demo') {
                     bat 'mvn clean install'
@@ -21,7 +21,7 @@ pipeline {
             }
         }
 
-        stage('TEST') {
+        stage('Test') {
             steps {
                 dir('demo') {
                     bat 'mvn test'
